@@ -1,0 +1,38 @@
+/*version desktop*/
+.img1{
+    @include imagesdesktop;
+    
+    &--modifier {
+        @extend .img1;
+        height: 500px;
+        bottom: 200px;
+    }
+}
+
+/*image version mobile*/ 
+
+@media screen and (max-width: map-get($breakpoint, mobile)) {
+    .img1{
+        @include imagesmobile;
+        
+    &--modifier {
+            @include imagesmobile;
+            height: 350px;
+            bottom: 125px;
+        }
+    }
+}
+
+/*image version tablet*/ 
+
+@media (min-width: map-get($breakpoint, minitablet)) and (max-width: map-get($breakpoint, maxtablet)) {
+    .img1{
+        @include imagestablet;
+        
+        &--modifier {
+            @include imagestablet;
+            height: 350px;
+            bottom: 130px;
+        }
+    }
+}

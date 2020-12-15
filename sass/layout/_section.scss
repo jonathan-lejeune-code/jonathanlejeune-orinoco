@@ -1,0 +1,189 @@
+/*version desktop*/
+section{
+    width: 100%;
+    background-color: $color-grey-light;
+    padding-bottom: 50px;
+    display: flex;
+    flex-wrap:wrap ;
+    @include police2;
+    & h2{
+        @include titleh2;
+        width: 100%;
+    }
+
+    & .img_resto{
+        width: 35%;
+        height: 320px;
+        margin: auto;
+        margin-bottom: 3%;
+        background-color: $color-white;
+        border-radius: 30px;
+        @include shadow(2px,2px,6px,$color-grey);
+    }
+
+    & figure{
+        width: 100%;
+        height: 305px;
+        margin: 0;
+        background-color: $color-white;
+        border-radius: 30px;
+        overflow: hidden;
+        & p{
+            font-size: 27px;
+        }
+    }
+    & a {
+        text-decoration: none;
+        color: black;
+    }
+
+}
+
+.img{
+    width: 100%;
+    height: 130px;
+    bottom: 110px;
+    display: flex;
+    align-items: center;
+    background-color: $color-white;
+    position: relative;
+
+    &-m {
+        @extend .img;
+        bottom: 300px;
+    }
+}
+
+.img{
+    &_text{
+        margin-right: 15%;
+        padding-left: 30px;
+        width: 60%;
+        @include police2;
+
+        &_bold{
+            font-weight: bold;
+
+        }
+    }
+
+    & .far{
+        font-size: 40px;
+        color: $color-grey-dark;
+        position: absolute;
+        right: 15%;
+        z-index: 1;
+    }
+
+    & .fas{
+        font-size: 40px;
+        position: absolute;
+        right: 15%;
+        display: none;
+    }
+
+}
+
+.nouveau1,
+.nouveau2 {
+    @include butonnouveau;
+}
+
+/*section version tablet */ 
+
+@media (min-width: map-get($breakpoint, minitablet)) and (max-width: map-get($breakpoint, maxtablet)) {
+    section {
+        & h2 {
+            font-size: 35px;
+            @include h2tab;
+        }
+        & .img_resto {
+            width: 40%;
+            height: 220px;
+        }
+        & figure {
+            height: 205px;
+            & p {
+                font-size: 18px;
+            }
+        }
+    }
+    .img {
+        @include h3tablet;
+
+        &-m{
+            @include h3tablet;
+            bottom:210px;
+        }
+    }
+    .img {
+        &_text {
+            padding-left: 20px;
+            height: 70px;
+            margin-bottom: 25px;
+        }
+        & .far,
+        .fas {
+            font-size: 30px;
+            right: 10%;
+            top: 20%;
+        }
+    }
+    .nouveau1,
+    .nouveau2{
+        @include butonnouveautablet;
+    }
+
+}
+
+/*section version mobile*/ 
+
+@media screen and (max-width: map-get($breakpoint, mobile)) {
+        section {
+            padding-bottom: 30px;
+            & h2 {
+                @include h2mobile;
+            }
+            & .img_resto {
+                width: 90%;
+                height: 210px;
+                border-radius: 20px;
+                overflow: hidden;
+                @include shadow(2px, 2px, 6px, $color-grey);
+                margin-bottom: 20px;
+            }
+            & figure {
+                width: 100%;
+                border-radius: 20px;
+                & p {
+                    font-size: 15px;
+                }
+            }
+        }
+        .img {
+            @include h3mobile;
+            &-m{
+                @include h3mobile;
+                bottom: 210px;
+            }
+            
+        }
+        .img {
+            &_text {
+                padding-left: 10px;
+                height: 70px;
+                margin-right: 20%;
+            }
+            & .far,
+            .fas {
+                font-size: 25px;
+                right: 10%;
+                top: 25%;
+            }
+        }
+        .nouveau1,
+        .nouveau2{
+            @include butonnouveauportable;
+        }
+        
+}

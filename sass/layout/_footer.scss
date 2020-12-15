@@ -1,0 +1,86 @@
+/* footer version ordi*/
+footer {
+    background-color: $color-grey-dark;
+    width: 100%;
+    padding-top: 5px;
+    padding-bottom: 30px;
+    & h3 {
+        @include police1;
+        color: $color-white;
+        font-size: 25px;
+        margin: {
+            top: 20px;
+            left: 20px;
+            bottom: 20px;
+        }
+    }
+}
+footer ul {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 60px;
+    margin-bottom: 30px;
+    & li {
+        list-style-type: none;
+        margin-left: -40px;
+        @include police2;
+        width: 20%;
+        font-size: 23px;
+        & a {
+            text-decoration: none;
+            color: $color-white;
+        }
+    }
+    & i {
+        width: 12px;
+        font-size: 18px;
+        margin-right: 10px;
+    }
+}
+
+/*footer version mobile*/
+
+@media screen and (max-width: map-get($breakpoint, mobile)) {
+    footer {
+        width: 100%;
+        & h3 {
+            font-size: 20px;
+        }
+    }
+    footer ul {
+        flex-direction: column;
+        margin-bottom: 20px;
+        & li {
+            width: 90%;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        & i {
+            font-size: 16px;
+        }
+    }
+}
+
+/*footer version tablet*/ 
+
+@media (min-width: map-get($breakpoint, minitablet)) and (max-width: map-get($breakpoint, maxtablet)) {
+    footer {
+        & h3 {
+            font-size: 32px;
+            margin-bottom: 40px;
+        }
+    }
+    footer ul {
+        flex-wrap: wrap;
+        justify-content: space-around;
+        margin-right: 0px;
+        & li {
+            width: 40%;
+            font-size: 25px;
+            margin-bottom: 20px;
+        }
+        & i {
+            font-size: 16px;
+        }
+    }
+}
