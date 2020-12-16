@@ -10,7 +10,8 @@
 	<meta property="og:description" content="Ventes en ligne d'ours en peluche fais a la main">
 	<meta property="og:image" content="">
     <meta property="og:type" content="siteweb" />
-    
+
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
     <link rel="shortcut icon" type="image/png" href="favicon.webp">
 
@@ -18,8 +19,23 @@
 </head>
 <body>
     <header>
-        <div>
-            <a href="index.html" id="accueil"><img src="images/orinoco-logo.png"></a>
+        <div class="banner">
+            <a href="index.html" ><img class="logo" src="images/orinoco-logo.png"></a>
+        </div>
+
+        <div class="nav">
+            <nav>                
+                <ul>
+                    <li class="lien">
+                        <a class="nav-link" href="index.html">Accueil</a>
+                    </li>
+
+                    <li class="lien">
+                        <a class="nav-link" href="panier.html"> Panier (<span></span>) <i class="fas fa-shopping-cart fa-1x"></i></a>
+                    </li>
+
+                </ul>
+            </nav>
         </div>
     </header>
     

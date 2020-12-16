@@ -1,16 +1,39 @@
+.article{
+    width: 100%;
+    height:auto;
+}
+
+
+
+.cader{ 
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    
+}
+
+
 h1 {
     color: $color-secondary;
     font-weight: bold;
-    size: 24px;
+    font-size: 30px;
+    margin-bottom: 20px;
 }
 
 h3{
     color:black;
     font-weight: bold;
-    size: 20px;
+    font-size: 20px;
+    background-color: $color-tertiary;
 }
 
 .border{
-    width: auto;
+    width: 40%;
     height: auto;
+    display: flex;
+    margin:auto;
+    margin-bottom: 20px;
+    flex-direction: column;
+    border:$color-secondary solid 13px;
+    text-align: center;
 }

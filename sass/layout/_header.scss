@@ -1,11 +1,16 @@
 header {
-    overflow: hidden;
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: row;
 }
 
 .logo {
-    width: 40%;
-    display: block;
-    margin: auto;
+    width:60%;
+    height: auto;
     margin-top: 10px;
     margin-bottom: 0px;
 }
+
+
+
