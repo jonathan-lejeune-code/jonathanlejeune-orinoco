@@ -85,7 +85,12 @@ h1 {
 h3 {
   color: black;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 30px;
+  background-color: #D78232;
+}
+
+.price {
+  font-size: 24px;
   background-color: #D78232;
 }
 
@@ -98,6 +103,18 @@ h3 {
   flex-direction: column;
   border: #8F5BFE solid 13px;
   text-align: center;
+}
+
+.caderproduct {
+  background-color: #D78232;
+  width: 80%;
+  height: 600px;
+  margin: auto;
+}
+
+.btn {
+  width: 100%;
+  background-color: #F3E9F1;
 }
 
 /*version desktop*/
