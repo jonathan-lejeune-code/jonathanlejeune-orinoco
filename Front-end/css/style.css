@@ -72,9 +72,14 @@ ul {
 }
 
 .cader {
+  width: 50%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  margin: auto;
+  margin-bottom: 20px;
+  border: #8F5BFE solid 13px;
+  text-align: center;
 }
 
 h1 {
@@ -84,7 +89,7 @@ h1 {
   margin-bottom: 20px;
 }
 
-h3 {
+h2 {
   color: black;
   font-weight: bold;
   font-size: 30px;
@@ -96,21 +101,10 @@ h3 {
   background-color: #D78232;
 }
 
-.border {
-  width: 40%;
-  height: auto;
-  display: flex;
-  margin: auto;
-  margin-bottom: 20px;
-  flex-direction: column;
-  border: #8F5BFE solid 13px;
-  text-align: center;
-}
-
-.caderproduct {
+.text-product {
   background-color: #D78232;
-  width: 80%;
-  height: 600px;
+  width: 100%;
+  height: auto;
   margin: auto;
 }
 
