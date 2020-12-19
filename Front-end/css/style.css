@@ -35,9 +35,7 @@ header {
   width: 60%;
   height: auto;
   margin-top: 10px;
-  margin-bottom: 0px;
-  border: #8F5BFE solid 5px;
-  border-radius: 90px;
+  margin-bottom: 20px;
 }
 
 .nav {
@@ -66,13 +64,14 @@ ul {
   font-size: 22px;
 }
 
-.article {
-  width: 100%;
-  height: auto;
+#container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .cader {
-  width: 50%;
+  width: 40%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -83,22 +82,13 @@ ul {
 }
 
 h1 {
+  width: 500px;
+  margin: auto;
   color: #8F5BFE;
   font-weight: bold;
-  font-size: 30px;
-  margin-bottom: 20px;
-}
-
-h2 {
-  color: black;
-  font-weight: bold;
-  font-size: 30px;
-  background-color: #D78232;
-}
-
-.price {
-  font-size: 24px;
-  background-color: #D78232;
+  font-size: 50px;
+  margin-bottom: 30px;
+  text-align: center;
 }
 
 .text-product {
@@ -108,9 +98,45 @@ h2 {
   margin: auto;
 }
 
+.h2ours {
+  color: black;
+  font-weight: bold;
+  font-size: 30px;
+  background-color: #D78232;
+}
+
+.h2product {
+  width: 500px;
+  margin: auto;
+  color: #8F5BFE;
+  font-weight: bold;
+  font-size: 50px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.description {
+  font-size: 20px;
+  background-color: #D78232;
+}
+
+.price {
+  font-size: 24px;
+  background-color: #D78232;
+}
+
 .btn {
   width: 100%;
+  text-decoration: none;
   background-color: #F3E9F1;
+}
+
+a {
+  font-size: 18px;
+  font-weight: bold;
+  color: black;
+  background-color: #F3E9F1;
+  text-decoration: none;
 }
 
 /*version desktop*/
