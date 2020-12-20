@@ -71,17 +71,19 @@ ul {
 }
 
 .cader {
-  width: 40%;
+  width: 18%;
+  height: 500px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin: auto;
+  margin: 50px;
   margin-bottom: 20px;
   border: #8F5BFE solid 13px;
   text-align: center;
 }
 
 h1 {
+  font-family: "roboto", "sans serif";
   width: 500px;
   margin: auto;
   color: #8F5BFE;
@@ -100,6 +102,7 @@ h1 {
 
 .h2ours {
   color: black;
+  font-family: "roboto", "sans serif";
   font-weight: bold;
   font-size: 30px;
   background-color: #D78232;
@@ -142,9 +145,7 @@ a {
 /*version desktop*/
 .img1 {
   width: 100%;
-  height: 500px;
-  right: 5px;
-  bottom: 90px;
+  height: 320px;
   object-fit: cover;
 }
 
