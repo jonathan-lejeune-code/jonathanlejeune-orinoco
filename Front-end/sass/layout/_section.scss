@@ -39,7 +39,7 @@ h1 {
 
 
 .h2ours{
-    color:black;
+    color:$color-primary;
     font-family: "roboto", "sans serif";
     font-weight: bold;
     font-size: 30px;
@@ -49,8 +49,7 @@ h1 {
 .h2product{
     width: 500px;
     margin: auto;
-    color: $color-secondary;
-
+    color: blue;
     font-weight: bold;
     font-size: 50px;
     margin-bottom: 30px;
@@ -58,7 +57,7 @@ h1 {
 }   
 
 .description{
-    font-family: ;
+    font-family:"merrywether", "sans serif";
     font-size: 20px;
     background-color: $color-tertiary;
 }
@@ -80,4 +79,16 @@ a{  font-size: 18px;
     color: black;
     background-color: $color-primary;
     text-decoration: none;
+}
+
+
+
+
+/*Page Produit */ 
+
+.window-product{
+
+    background-color: blue;
+    width: 100%;
+    height: auto;
 }

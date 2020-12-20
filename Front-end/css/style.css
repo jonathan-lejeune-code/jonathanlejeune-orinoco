@@ -72,7 +72,7 @@ ul {
 
 .cader {
   width: 18%;
-  height: 500px;
+  height: auto;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -101,7 +101,7 @@ h1 {
 }
 
 .h2ours {
-  color: black;
+  color: #F3E9F1;
   font-family: "roboto", "sans serif";
   font-weight: bold;
   font-size: 30px;
@@ -111,7 +111,7 @@ h1 {
 .h2product {
   width: 500px;
   margin: auto;
-  color: #8F5BFE;
+  color: blue;
   font-weight: bold;
   font-size: 50px;
   margin-bottom: 30px;
@@ -119,6 +119,7 @@ h1 {
 }
 
 .description {
+  font-family: "merrywether", "sans serif";
   font-size: 20px;
   background-color: #D78232;
 }
@@ -140,6 +141,13 @@ a {
   color: black;
   background-color: #F3E9F1;
   text-decoration: none;
+}
+
+/*Page Produit */
+.window-product {
+  background-color: blue;
+  width: 100%;
+  height: auto;
 }
 
 /*version desktop*/
