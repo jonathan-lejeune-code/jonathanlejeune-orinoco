@@ -90,21 +90,27 @@ a{  font-size: 18px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    width: 100%;
+    width: auto;
     height: auto;
+    margin: 0px auto;
+    text-align: center;
+}
+
+.divProduct{
+    width: 100%;
 }
 
 .divImg{
-    width: 45%;
+    width: 30%;
     height: auto;
-    margin: 50px;
-    border: blue solid 10px;
+    margin: auto;
+    border:$color-tertiary solid 10px;
+    text-align: center;
 }
 
 
 .imgProduct{
-    width: 30%;
+    width: 100%;
     height: auto;
-    
 }
 
