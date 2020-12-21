@@ -144,9 +144,23 @@ a {
 }
 
 /*Page Produit */
-.window-product {
-  background-color: blue;
+#windowProduct {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   width: 100%;
+  height: auto;
+}
+
+.divImg {
+  width: 45%;
+  height: auto;
+  margin: 50px;
+  border: blue solid 10px;
+}
+
+.imgProduct {
+  width: 30%;
   height: auto;
 }
 
