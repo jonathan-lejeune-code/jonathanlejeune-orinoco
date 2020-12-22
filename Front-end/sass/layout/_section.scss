@@ -46,15 +46,6 @@ h1 {
     background-color: $color-tertiary;
 }
 
-.h2product{
-    width: 500px;
-    margin: auto;
-    color: blue;
-    font-weight: bold;
-    font-size: 50px;
-    margin-bottom: 30px;
-    text-align: center;
-}   
 
 .description{
     font-family:"merrywether", "sans serif";
@@ -74,7 +65,8 @@ h1 {
     background-color: $color-primary;
 }
 
-a{  font-size: 18px;
+.lienA{ 
+    font-size: 18px;
     font-weight: bold;
     color: black;
     background-color: $color-primary;
@@ -94,14 +86,19 @@ a{  font-size: 18px;
     height: auto;
     margin: 0px auto;
     text-align: center;
+    
 }
+
+
 
 .divProduct{
     width: 100%;
+    height: auto;
+    
 }
 
 .divImg{
-    width: 30%;
+    width: 35%;
     height: auto;
     margin: auto;
     border:$color-tertiary solid 10px;
@@ -113,4 +110,77 @@ a{  font-size: 18px;
     width: 100%;
     height: auto;
 }
+
+.h2Product{
+    color:$color-secondary;
+    font-family: "roboto", "sans serif";
+    font-weight: bold;
+    font-size: 30px; 
+}
+
+.blocProduct{
+    width: 100%;
+    height:auto;   
+}
+
+.textProduct{
+    width: 30%;
+    height: auto;
+    margin: auto;
+    font-size: 20px;
+}   
+
+.option{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.select{
+    width: 100%;
+    height: auto;
+}
+
+.quantity{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.priceProduct{
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.btnAjout{
+    margin-top: 10px;
+    margin-right: 10px;
+    background-color: $color-tertiary;
+}
+
+.liens{
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+    background-color: $color-tertiary;
+}
+
+.btnReturn{
+    margin-top: 10px;
+    background-color: $color-secondary;
+}
+
+.lien{
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+    background-color: $color-secondary;
+}
+
+
 

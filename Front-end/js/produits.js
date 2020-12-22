@@ -41,7 +41,7 @@ fetch ("http://localhost:3000/api/teddies/" + getId())
 		let h2Product = document.createElement("h2");
     divProduct.appendChild(h2Product);
     h2Product.textContent = Peluche.name;
-    h2Product.className = "h2Products";
+    h2Product.className = "h2Product";
     
 		let blocProduct = document.createElement("div");
 		divProduct.appendChild(blocProduct);
@@ -54,10 +54,10 @@ fetch ("http://localhost:3000/api/teddies/" + getId())
     textProduct.className = "textProduct";
 
     
-    let optionName = document.createElement("p"); 
-    blocProduct.appendChild(optionName);
-    optionName.textContent = "Choix" + " ";
-    optionName.className = "optionName";
+    let option = document.createElement("p"); 
+    blocProduct.appendChild(option);
+    option.textContent = "Choix" + " ";
+    option.className = "option";
     
 	
       let select = document.createElement("select");
@@ -66,12 +66,13 @@ fetch ("http://localhost:3000/api/teddies/" + getId())
 
     let oursQuantity = document.createElement("div");
     blocProduct.appendChild(oursQuantity);
-    oursQuantity.className = "quantity";
+    oursQuantity.className = "oursquantity";
 
     
     let quantity = document.createElement("p");
     oursQuantity.appendChild(quantity);
     quantity.textContent = "Quantité";
+    quantity.className = "quantity";
 
     
     let btnQuantity = document.createElement("input");
@@ -79,7 +80,7 @@ fetch ("http://localhost:3000/api/teddies/" + getId())
     btnQuantity.setAttribute("type","number");
     btnQuantity.setAttribute("value",0);
     btnQuantity.setAttribute("min",0);
-    btnQuantity.className = "quantity_input";
+    btnQuantity.className = "quantityInput";
 
     
     let divPrice = document.createElement("div");
@@ -101,13 +102,13 @@ fetch ("http://localhost:3000/api/teddies/" + getId())
     let btnAjout = document.createElement("button");
     divBtn.appendChild(btnAjout);
     btnAjout.className = "btnAjout"
-    btnAjout.innerHTML =`<a class="liens" href="panier.html" >Ajouter</a>`
+    btnAjout.innerHTML =`<a class="liens" href="panier.html" >Ajouter aux Panier</a>`
 
     
     let btnReturn = document.createElement("button");
     divBtn.appendChild(btnReturn);
     btnReturn.className = "btnReturn";
-    btnReturn.innerHTML =`<a  class="liens" href="index.html" >Retour</a>`;
+    btnReturn.innerHTML =`<a  class="lien" href="index.html" >Retour</a>`;
 
    
     btnAjout.addEventListener("click",envoiDuProduit) 

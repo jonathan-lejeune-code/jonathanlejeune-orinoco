@@ -59,7 +59,7 @@ fetch("http://localhost:3000/api/teddies")
       let buttonInfo = document.createElement("button");
       textProducts.appendChild(buttonInfo);
       buttonInfo.className = "btn";
-      buttonInfo.innerHTML = `<a  class="liens" href="produits.html?id=${element._id}" >Voir Le Produit</a>`
+      buttonInfo.innerHTML = `<a  class="lienA" href="produits.html?id=${element._id}" >Voir Le Produit</a>`
 
   }       
 
