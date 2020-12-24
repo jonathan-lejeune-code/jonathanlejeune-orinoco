@@ -2,7 +2,7 @@
 
 const URL ="http://localhost:3000/api/teddies"
 
-let oursContainer = document.getElementById("windowProduct")
+const oursContainer = document.getElementById("windowProduct")
 
 //récupération de l'id du produit
 function getId(){
@@ -20,92 +20,100 @@ fetch ("http://localhost:3000/api/teddies/" + getId())
 	function afficherLeProduit(Peluche) {
 
    /*structure HTML */
-		let divProduct = document.createElement("div");
+		const divProduct = document.createElement("div");
     oursContainer.appendChild(divProduct);
     divProduct.className = "divProduct"
     console.log(divProduct)
     
 	
-		let divImg = document.createElement("div");
+		const divImg = document.createElement("div");
 		divProduct.appendChild(divImg);
     divImg.className = "divImg"
     
     
-		let imgProduct = document.createElement("img");
+		const imgProduct = document.createElement("img");
     divImg.appendChild(imgProduct);           
     imgProduct.src = Peluche.imageUrl;
     imgProduct.className = "imgProduct";
     
     
 	
-		let h2Product = document.createElement("h2");
+		const h2Product = document.createElement("h2");
     divProduct.appendChild(h2Product);
     h2Product.textContent = Peluche.name;
     h2Product.className = "h2Product";
     
-		let blocProduct = document.createElement("div");
+		const blocProduct = document.createElement("div");
 		divProduct.appendChild(blocProduct);
     blocProduct.className = "blocProduct";
     
     
-    let textProduct = document.createElement("p");
+    const textProduct = document.createElement("p");
     blocProduct.appendChild(textProduct);
     textProduct.textContent = Peluche.description;
     textProduct.className = "textProduct";
 
     
-    let option = document.createElement("p"); 
+    const option = document.createElement("p"); 
     blocProduct.appendChild(option);
     option.textContent = "Choix" + " ";
     option.className = "option";
     
 	
-      let select = document.createElement("select");
+      const select = document.createElement("select");
       blocProduct.appendChild(select);
 
+      for (let color of windowProduct.colors){
+       
+        let option = document.createElement('option')
+        select.appendChild(option);
+        option.innerHTML = color;
+        select.setAttribute('value',color)
+        select.id = ('value', windowProduct.colors.value); 
+      }
 
-    let oursQuantity = document.createElement("div");
+    const oursQuantity = document.createElement("div");
     blocProduct.appendChild(oursQuantity);
     oursQuantity.className = "oursquantity";
 
     
-    let quantity = document.createElement("p");
+    const quantity = document.createElement("p");
     oursQuantity.appendChild(quantity);
     quantity.textContent = "Quantité";
     quantity.className = "quantity";
 
     
-    let btnQuantity = document.createElement("input");
+    const btnQuantity = document.createElement("input");
     oursQuantity.appendChild(btnQuantity);
     btnQuantity.setAttribute("type","number");
-    btnQuantity.setAttribute("value",0);
-    btnQuantity.setAttribute("min",0);
+    btnQuantity.setAttribute("value",1);
+    btnQuantity.setAttribute("min",1);
     btnQuantity.className = "quantityInput";
 
     
-    let divPrice = document.createElement("div");
+    const divPrice = document.createElement("div");
     blocProduct.appendChild(divPrice);
     divPrice.className = "divPrice";
 
     
-    let priceProduct = document.createElement("p");
+    const priceProduct = document.createElement("p");
     divPrice.appendChild(priceProduct);
     priceProduct.textContent = `Prix : ${Peluche.price/100} €`;
     priceProduct.className = "priceProduct";
 
     
-  	let divBtn = document.createElement("div");
+  	const divBtn = document.createElement("div");
     divProduct.appendChild(divBtn);
     divBtn.className = "divBtnAjouter";
 
     
-    let btnAjout = document.createElement("button");
+    const btnAjout = document.createElement("button");
     divBtn.appendChild(btnAjout);
     btnAjout.className = "btnAjout"
     btnAjout.innerHTML =`<a class="liens" href="panier.html" >Ajouter aux Panier</a>`
 
     
-    let btnReturn = document.createElement("button");
+    const btnReturn = document.createElement("button");
     divBtn.appendChild(btnReturn);
     btnReturn.className = "btnReturn";
     btnReturn.innerHTML =`<a  class="lien" href="index.html" >Retour</a>`;
@@ -122,7 +130,7 @@ fetch ("http://localhost:3000/api/teddies/" + getId())
         priceProduct.textContent = ((peluche.price / 100) * (+btnQuantity.value)) + "€";
         
 			
-				let pelucheBasket = {
+				const pelucheBasket = {
 					id : peluche._id,
 					name : peluche.name,
 					price : peluche.price/100,
@@ -133,7 +141,7 @@ fetch ("http://localhost:3000/api/teddies/" + getId())
 				}    
 			
 				//affiche dans le local storage
-				let objectifOption = JSON.stringify(pelucheBasket);
+				const objectifOption = JSON.stringify(pelucheBasket);
         localStorage.setItem(peluche._id, objectifOption);
 				alert (`${btnQuantity.value} ${ Peluche.name} ${select.value} ajouté au panier `);
       }  

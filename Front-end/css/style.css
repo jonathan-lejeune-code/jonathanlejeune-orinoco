@@ -233,6 +233,18 @@ h1 {
   background-color: #8F5BFE;
 }
 
+/*page panier*/
+.formu {
+  width: 100%;
+}
+
+input {
+  width: 200px;
+  margin: auto;
+  font-family: inherit;
+  font-size: 100%;
+}
+
 /*version desktop*/
 .img1 {
   width: 100%;
