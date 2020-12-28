@@ -38,6 +38,10 @@ header {
   margin-bottom: 20px;
 }
 
+.banner {
+  width: auto;
+}
+
 .nav {
   width: 80%;
   height: 50px;

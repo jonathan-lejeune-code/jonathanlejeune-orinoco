@@ -121,28 +121,29 @@ fetch ("http://localhost:3000/api/teddies/" + getId())
    
     btnAjout.addEventListener("click",envoiDuProduit) 
     function envoiDuProduit(event){
-    	//j'impose une condition de sélectionner une quantité           	
+    	//condition de sélectionner d'une quantité           	
       if (btnQuantity.value == 0 ){
         alert("Veuillez sélectionner une quantité")
         event.preventDefault();           
-      }else{
+      }
+      else{
        
         priceProduct.textContent = ((peluche.price / 100) * (+btnQuantity.value)) + "€";
         
 			
-				const pelucheBasket = {
-					id : peluche._id,
-					name : peluche.name,
-					price : peluche.price/100,
-					description : peluche.description,
-					imageUrl : peluche.imageUrl,
-					select: select.value,	
-					qty : btnQuantity.value 
-				}    
+          let peluchePanier = {
+            id : peluche._id,
+            name : peluche.name,
+            price : peluche.price/100,
+            description : peluche.description,
+            imageUrl : peluche.imageUrl,
+            select: select.value,	
+            qty : btnQuantity.value, 
+          };    
 			
 				//affiche dans le local storage
-				const objectifOption = JSON.stringify(pelucheBasket);
-        localStorage.setItem(peluche._id, objectifOption);
+			  	let pelucheOption = JSON.stringify(peluchePanier);
+        localStorage.setItem(peluche._id, pelucheOption);
 				alert (`${btnQuantity.value} ${ Peluche.name} ${select.value} ajouté au panier `);
       }  
     }

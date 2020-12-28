@@ -15,7 +15,7 @@ if (infoCommand == null){
     let id = document.getElementById("idCommande")
     id.innerHTML = `numéro de commande : ${infoCommand.orderId}`;
 
-    let price = document.getElementById("prixComfirmation")
+    let price = document.getElementById("prixConfirmation")
     price.innerHTML = `Prix total de la commande : ${infoCommand.totalPriceBasket} €`;
 
     localStorage.clear();
