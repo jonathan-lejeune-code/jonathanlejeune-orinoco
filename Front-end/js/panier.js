@@ -114,11 +114,16 @@ console.log(teddyPanier)
 
 /*partie formulaire */
 
+let reponseLastName = document.getElementById('reponseLastName');
 
+let mailReg = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}/
+let NameReg = /^[a-zA-z ]{2,}$/
+let addressReg = /^[0-9]{1,3}([a-zA-Z ]+)$/
+let cityReg = /^[a-zA-z ]{2,}$/
 
-let reponseAddress = document.getElementById('reponseAddress')
-let reponseCity = document.getElementById('reponseCity')
-let reponseMail = document.getElementById('reponseMail')
+let reponseAddress = document.getElementById('reponseAddress');
+let reponseCity = document.getElementById('reponseCity');
+let reponseMail = document.getElementById('reponseMail');
 
 function lastNameTest(value) {
   return /^[a-zA-z ]{2,}$/.test(value)
@@ -131,7 +136,7 @@ lastName.addEventListener('change', function (e) {
     e.preventDefault()
     return false
   } else {
-    console.log('true')
+    console.log('true');
   }
 })
 
@@ -191,6 +196,7 @@ email.addEventListener('change', function (e) {
   }
 })
 
+
 let form = document.getElementById('form');
 form.addEventListener('submit',(e) =>{
   
@@ -201,7 +207,6 @@ form.addEventListener('submit',(e) =>{
     return false
   }
 
-  
   let  contact =  {
     firstName : firstName.value,
     lastName : lastName.value,
@@ -222,6 +227,7 @@ form.addEventListener('submit',(e) =>{
   console.log(valide)
   
   //j'envoi les donnée avec post
+
   fetch('http://localhost:3000/api/teddies/order',{
     method: 'POST',
     headers : {
@@ -242,7 +248,7 @@ form.addEventListener('submit',(e) =>{
     }    
     let commande = JSON.stringify(envoiCommande);
     localStorage.setItem("commande", commande); 
-    window.location = "confirmation.html"
+    window.location = "confirmation.html";
   })
 
 

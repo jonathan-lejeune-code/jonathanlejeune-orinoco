@@ -335,4 +335,9 @@ input {
     bottom: 40px;
   }
 }
+
+footer {
+  position: absolute;
+  bottom: 0;
+}
 /*# sourceMappingURL=style.css.map */
