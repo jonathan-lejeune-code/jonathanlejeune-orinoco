@@ -185,6 +185,62 @@ h1 {
 
 /*page panier*/ 
 
+#teddyCard{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.divTextPanier{
+    width: 40%;
+    height:auto;
+    margin: 20px;
+    border: $color-secondary solid 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: center;
+    
+}
+
+.h2Panier{
+    font-family: "roboto", "sans serif";
+    font-weight: bold;
+    font-size: 30px; 
+    margin-left: 20px;
+    margin-right: 20px;
+    
+}
+
+.selectPanier{
+    font-family: "roboto", "sans serif";
+    font-size: 28px; 
+    margin-right: 10px;
+}
+
+.qtyPanier{
+    font-family: "roboto", "sans serif";
+    font-size: 28px; 
+    margin-right: 10px;
+}
+
+.prixTeddyPanier{
+    font-family: "roboto", "sans serif";
+    font-size: 28px; 
+}
+
+#totalPanier{
+    font-family: "roboto", "sans serif";
+    font-size: 28px; 
+    font-weight: bold;
+}
+
+#btnremove{
+    background-color: $color-secondary;
+}
+
 .formu{
     width:100%;
     

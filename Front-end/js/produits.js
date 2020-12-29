@@ -86,8 +86,8 @@ fetch ("http://localhost:3000/api/teddies/" + getId())
     const btnQuantity = document.createElement("input");
     oursQuantity.appendChild(btnQuantity);
     btnQuantity.setAttribute("type","number");
-    btnQuantity.setAttribute("value",1);
-    btnQuantity.setAttribute("min",1);
+    btnQuantity.setAttribute("value",0);
+    btnQuantity.setAttribute("min",0);
     btnQuantity.className = "quantityInput";
 
     
@@ -128,24 +128,24 @@ fetch ("http://localhost:3000/api/teddies/" + getId())
       }
       else{
        
-        priceProduct.textContent = ((peluche.price / 100) * (+btnQuantity.value)) + "€";
+        priceProduct.textContent = ((Peluche.price / 100) * (+btnQuantity.value)) + "€";
         
 			
-          let peluchePanier = {
-            id : peluche._id,
-            name : peluche.name,
-            price : peluche.price/100,
-            description : peluche.description,
-            imageUrl : peluche.imageUrl,
+          let PeluchePanier = {
+            id : Peluche._id,
+            name : Peluche.name,
+            price : Peluche.price/100,
+            description : Peluche.description,
+            imageUrl : Peluche.imageUrl,
             select: select.value,	
             qty : btnQuantity.value, 
           };    
 			
 				//affiche dans le local storage
-			  	let pelucheOption = JSON.stringify(peluchePanier);
-        localStorage.setItem(peluche._id, pelucheOption);
+			  	let PelucheOption = JSON.stringify(PeluchePanier);
+        localStorage.setItem(Peluche._id, PelucheOption);
 				alert (`${btnQuantity.value} ${ Peluche.name} ${select.value} ajouté au panier `);
-      }  
+      } 
     }
   }
   afficherLeProduit(windowProduct);   

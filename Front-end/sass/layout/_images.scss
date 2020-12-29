@@ -3,6 +3,10 @@
     @include imagesdesktop;
 }
 
+.imgPanier{
+    @include imagesPanierDesktop;
+}
+
 /*image version mobile*/ 
 
 @media screen and (max-width: map-get($breakpoint, mobile)) {

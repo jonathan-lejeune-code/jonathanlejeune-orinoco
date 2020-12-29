@@ -1,3 +1,4 @@
+/*page panier*/
 /*base page*/
 html,
 body,
@@ -238,6 +239,60 @@ h1 {
 }
 
 /*page panier*/
+#teddyCard {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.divTextPanier {
+  width: 40%;
+  height: auto;
+  margin: 20px;
+  border: #8F5BFE solid 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.h2Panier {
+  font-family: "roboto", "sans serif";
+  font-weight: bold;
+  font-size: 30px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.selectPanier {
+  font-family: "roboto", "sans serif";
+  font-size: 28px;
+  margin-right: 10px;
+}
+
+.qtyPanier {
+  font-family: "roboto", "sans serif";
+  font-size: 28px;
+  margin-right: 10px;
+}
+
+.prixTeddyPanier {
+  font-family: "roboto", "sans serif";
+  font-size: 28px;
+}
+
+#totalPanier {
+  font-family: "roboto", "sans serif";
+  font-size: 28px;
+  font-weight: bold;
+}
+
+#btnremove {
+  background-color: #8F5BFE;
+}
+
 .formu {
   width: 100%;
 }
@@ -253,6 +308,13 @@ input {
 .img1 {
   width: 100%;
   height: 320px;
+  object-fit: cover;
+}
+
+.imgPanier {
+  width: 100%;
+  height: 260px;
+  margin-bottom: 15px;
   object-fit: cover;
 }
 
