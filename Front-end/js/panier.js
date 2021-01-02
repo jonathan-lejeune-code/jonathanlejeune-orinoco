@@ -13,7 +13,7 @@ let teddyPanier = Object.keys(localStorage)
 //console.log(teddyPanier)
 
 
-//création d'une condition pour si le panier est vide
+//création d'une condition au cas ou le panier est vide
 if (teddyPanier.length == 0) {
     //
     let panierVide = document.createElement("p");
@@ -89,7 +89,7 @@ let totalPrixPanier = document.createElement("p");
 totalPrixPanier.className = 'totalPrixPanier';
 totalPrixPanier.innerHTML = `Prix total de votre panier : ${totalProduitPanier} €`;
 totalP.appendChild(totalPrixPanier)
-//console.log(totalPrixPanier)
+
 
 
 //Bouton envoi
@@ -144,7 +144,7 @@ function firstNameTest(value) {
   return /^[a-zA-z ]{2,}$/.test(value)
 }
 firstName.addEventListener('change', function (e) {
-//function firstName (e){
+
   if(!firstNameTest(firstName.value)){
   reponseFirstName.textContent = 'le champs prénom comporte des erreurs'
   e.preventDefault()
@@ -186,7 +186,7 @@ function mailTest(value) {
   return /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}/.test(value)
 }
 email.addEventListener('change', function (e) {
-//function email (e){
+
   if(!mailTest(email.value)){
   reponseMail.textContent = 'le champs email comporte des erreurs'
   e.preventDefault()

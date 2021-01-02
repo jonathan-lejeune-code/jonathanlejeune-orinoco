@@ -284,24 +284,60 @@ h1 {
 }
 
 #totalPanier {
+  margin-left: 20px;
   font-family: "roboto", "sans serif";
   font-size: 28px;
   font-weight: bold;
 }
 
 #btnremove {
+  width: 200px;
+  height: 30px;
+  margin-left: 20px;
   background-color: #8F5BFE;
 }
 
-.formu {
+#identity {
+  margin-left: 20px;
+  margin-top: 20px;
+  font-family: "roboto", "sans serif";
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.divForm {
+  margin-left: 20px;
+}
+
+#form {
   width: 100%;
 }
 
 input {
-  width: 200px;
+  width: 400px;
+  height: 30px;
   margin: auto;
   font-family: inherit;
   font-size: 100%;
+}
+
+#btnValide {
+  width: 200px;
+  height: 30px;
+  margin-top: 20px;
+  background-color: #8F5BFE;
+}
+
+#btnRetour {
+  width: 200px;
+  height: 30px;
+  background-color: #8F5BFE;
+}
+
+.Retour {
+  background-color: #8F5BFE;
+  color: black;
+  text-decoration: none;
 }
 
 /*version desktop*/
@@ -312,7 +348,7 @@ input {
 }
 
 .imgPanier {
-  width: 100%;
+  width: 60%;
   height: 260px;
   margin-bottom: 15px;
   object-fit: cover;
@@ -338,6 +374,6 @@ input {
 
 footer {
   position: absolute;
-  bottom: 0;
+  margin-bottom: 0px;
 }
 /*# sourceMappingURL=style.css.map */
