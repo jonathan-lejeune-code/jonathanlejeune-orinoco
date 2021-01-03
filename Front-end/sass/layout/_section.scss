@@ -6,12 +6,12 @@
 }
 
 .cader{ 
-    width: 18%;
+    width: 30%;
     height: auto;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    margin:50px;
+    margin:auto;
     margin-bottom: 20px;
     border:$color-secondary solid 13px;
     text-align: center;
@@ -89,8 +89,6 @@ h1 {
     
 }
 
-
-
 .divProduct{
     width: 100%;
     height: auto;
@@ -104,7 +102,6 @@ h1 {
     border:$color-tertiary solid 10px;
     text-align: center;
 }
-
 
 .imgProduct{
     width: 100%;
@@ -289,4 +286,77 @@ input{
     color: black;
    text-decoration: none;
 }
- 
+
+
+
+@media (min-width: map-get($breakpoint, minitablet)) and (max-width: map-get($breakpoint, maxtablet)) {
+   
+
+    .cader{ 
+        width: 30%;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin:auto;
+        margin-bottom: 20px;
+        border:$color-secondary solid 13px;
+        text-align: center;
+        
+    }
+
+    /*page produit*/
+
+    .divProduct{
+        width: 100%;
+        height: auto;
+        
+    }
+
+    .divImg{
+        width: 50%;
+        height: auto;
+        margin: auto;
+        border:$color-tertiary solid 10px;
+        text-align: center;
+    }
+
+}
+
+@media screen and (max-width: map-get($breakpoint, mobile)) {
+   
+
+    .cader{ 
+        width: 40%;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin:auto;
+        margin-bottom: 20px;
+        border:$color-secondary solid 13px;
+        text-align: center;
+        
+    }
+
+    h1 {
+        width:auto;
+        color: $color-secondary;
+        font-weight: bold;
+        font-size: 50px;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+    .divImg{
+        width: 60%;
+        height: auto;
+        margin: auto;
+        border:$color-tertiary solid 10px;
+        text-align: center;
+    }
+
+    .quantityInput{
+        width: auto;
+    }
+}

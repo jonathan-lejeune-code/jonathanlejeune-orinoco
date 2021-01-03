@@ -18,7 +18,7 @@ if (teddyPanier.length == 0) {
     //
     let panierVide = document.createElement("p");
     mainPanier.appendChild(panierVide);
-    panierVide.className = "basket_empty"
+    panierVide.className = "panierVide"
     panierVide.innerHTML =`Votre panier est vide`
 }else{
   function recuperationBasket() {
@@ -210,9 +210,9 @@ form.addEventListener('submit',(e) =>{
   let  contact =  {
     firstName : firstName.value,
     lastName : lastName.value,
-   address : address.value,
+    address : address.value,
     city : city.value,
-   email : email.value,
+    email : email.value,
   }
   console.log(contact)
 

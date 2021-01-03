@@ -76,12 +76,12 @@ ul {
 }
 
 .cader {
-  width: 18%;
+  width: 30%;
   height: auto;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin: 50px;
+  margin: auto;
   margin-bottom: 20px;
   border: #8F5BFE solid 13px;
   text-align: center;
@@ -340,6 +340,64 @@ input {
   text-decoration: none;
 }
 
+@media (min-width: 801px) and (max-width: 1168px) {
+  .cader {
+    width: 30%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: auto;
+    margin-bottom: 20px;
+    border: #8F5BFE solid 13px;
+    text-align: center;
+  }
+  /*page produit*/
+  .divProduct {
+    width: 100%;
+    height: auto;
+  }
+  .divImg {
+    width: 50%;
+    height: auto;
+    margin: auto;
+    border: #D78232 solid 10px;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .cader {
+    width: 40%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: auto;
+    margin-bottom: 20px;
+    border: #8F5BFE solid 13px;
+    text-align: center;
+  }
+  h1 {
+    width: auto;
+    color: #8F5BFE;
+    font-weight: bold;
+    font-size: 50px;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  .divImg {
+    width: 60%;
+    height: auto;
+    margin: auto;
+    border: #D78232 solid 10px;
+    text-align: center;
+  }
+  .quantityInput {
+    width: auto;
+  }
+}
+
 /*version desktop*/
 .img1 {
   width: 100%;
@@ -355,20 +413,19 @@ input {
 }
 
 /*image version mobile*/
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 800px) {
   .img1 {
     width: 100%;
     height: 200px;
-    bottom: 50px;
   }
 }
 
 /*image version tablet*/
-@media (min-width: 768px) and (max-width: 991px) {
+@media (min-width: 801px) and (max-width: 1168px) {
   .img1 {
-    width: 60%;
+    width: 100%;
     height: 200px;
-    bottom: 40px;
+    object-fit: cover;
   }
 }
 
