@@ -13,6 +13,11 @@
     .img1{
         @include imagesmobile;
     }
+
+    .imgPanier{
+        @include imagesPanierMobile;
+    }
+    
 }
 
 /*image version tablet*/ 
@@ -21,4 +26,9 @@
     .img1{
         @include imagestablet;
     }
+
+    .imgPanier{
+        @include imagesPanierTablet;
+    }
+    
 }

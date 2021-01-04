@@ -182,6 +182,13 @@ h1 {
 
 /*page panier*/ 
 
+#mainPanier{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    
+}
+
 #teddyCard{
     width: 100%;
     height: auto;
@@ -193,7 +200,8 @@ h1 {
 .divTextPanier{
     width: 40%;
     height:auto;
-    margin: 20px;
+    margin: auto;
+    margin-bottom: 20px;
     border: $color-secondary solid 10px;
     display: flex;
     flex-direction: row;
@@ -288,6 +296,49 @@ input{
 }
 
 
+/*page confirmation*/ 
+
+#main_command{
+    width: 100%;
+    height: auto;
+}
+
+#commandeNull{
+    margin-left: 20px;
+    font-family: "roboto", "sans serif";
+    font-size: 28px; 
+    font-weight: bold;
+}
+
+#h2_thanks{
+    margin-left: 20px;
+    font-family: "roboto", "sans serif";
+    font-size: 28px; 
+    font-weight: bold;
+}
+
+#info{
+    margin-left: 20px;
+    font-family: "roboto", "sans serif";
+    font-size: 20px; 
+    font-weight: bold;
+}
+
+#id_commande{
+    margin-left: 20px;
+    font-family: "roboto", "sans serif";
+    font-size: 28px; 
+    font-weight: bold;
+}
+
+#priceConfirmation{
+    margin-left: 20px;
+    font-family: "roboto", "sans serif";
+    font-size: 28px; 
+    font-weight: bold;
+}
+
+/* media querie page index*/ 
 
 @media (min-width: map-get($breakpoint, minitablet)) and (max-width: map-get($breakpoint, maxtablet)) {
    
@@ -305,7 +356,7 @@ input{
         
     }
 
-    /*page produit*/
+    /* media querie page produit*/
 
     .divProduct{
         width: 100%;
@@ -359,4 +410,55 @@ input{
     .quantityInput{
         width: auto;
     }
+}
+
+/*media querie page panier*/ 
+
+@media (min-width: map-get($breakpoint, minitablet)) and (max-width: map-get($breakpoint, maxtablet)) {
+   
+
+.divTextPanier{
+    width: 40%;
+    height:auto;
+    margin: auto;
+    margin-top: 20px;
+    border: $color-secondary solid 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: center;
+    
+}
+
+#totalPanier{
+    margin-top: 20px;
+ }
+}
+
+@media screen and (max-width: map-get($breakpoint, mobile)) {
+   
+    .divTextPanier{
+        width: 60%;
+        height:auto;
+        margin: auto;
+        margin-top: 20px;
+        border: $color-secondary solid 10px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        text-align: center;
+        
+    }
+    
+    #totalPanier{
+        margin-top: 20px;
+     }
+
+     input{
+        width:auto;
+        height: 30px;
+        margin: auto;
+        
+    }
+   
 }
