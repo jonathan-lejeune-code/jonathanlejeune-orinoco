@@ -533,5 +533,8 @@ input {
 footer {
   position: absolute;
   margin-bottom: 0px;
+  width: 100%;
+  padding-top: 50px;
+  height: 50px;
 }
 /*# sourceMappingURL=style.css.map */
