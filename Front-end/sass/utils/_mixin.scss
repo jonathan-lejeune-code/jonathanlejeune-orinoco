@@ -1,0 +1,41 @@
+
+
+@mixin imagesdesktop {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+}
+@mixin imagestablet {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+@mixin imagesmobile {
+    width: 100%;
+    height: 200px;
+   
+}
+
+
+/*page panier*/
+
+@mixin imagesPanierDesktop {
+    width: 100%;
+    height: auto;
+    margin-bottom:15px;
+    object-fit: cover;
+}
+
+@mixin imagesPanierTablet {
+    width: 100%;
+    height: 260px;
+    margin-bottom:15px;
+    object-fit: cover;
+}
+
+@mixin imagesPanierMobile {
+    width: 100%;
+    height: 260px;
+    margin-bottom:15px;
+    object-fit: cover;
+}

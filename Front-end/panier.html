@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Vente en ligne d'ours en peluche faits a la main">
+    <meta property="og:url" content="https:">
+    <meta property="og:title" content="Orinoco">
+    <meta property="og:description" content="Ventes en ligne d'ours en peluche fais a la main">
+    <meta property="og:image" content="">
+    <meta property="og:type" content="siteweb" />
+
+
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+        integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <link rel="shortcut icon" type="image/png" href="favicon.webp">
+
+    <title>Orinoco</title>
+</head>
+
+<body>
+    <header>
+        <div class="banner">
+            <a href="index.html" ><img class="logo" src="/images/orinoco-logo.png" alt="logo du site"></a>
+        </div>
+
+        <div class="nav">
+            <nav>
+                <ul>
+                    <li class="lien">
+                        <a class="nav-link" href="index.html">Accueil</a>
+                    </li>
+
+                    <li class="lien">
+                        <a class="nav-link" href="panier.html"> Panier<i
+                                class="fas fa-shopping-cart fa-1x"></i></a>
+                    </li>
+
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="mainPanier">
+        <div id="teddyCard">
+        </div>
+    </main>
+    
+    <div id="total">
+        <div id="removePanier">
+            <div id="totalPanier"></div>
+            <button id="btnremove"><i class="far fa-trash-alt"> Supprimer vos articles</i></button>
+        </div>
+    </div>
+    <p id="identity">Veuillez entrer vos coordonnées pour valider votre panier.</p>
+   
+    <div class="divForm">
+        <form  id="form">
+          <input type="text" name="lastName" placeholder="Nom" id="lastName"  required><br>
+          <input type="text" name="firstName" placeholder="Prénom" id="firstName"  required><br>
+          <input type="text" name="address" placeholder="Adresse" id="address"  required><br>
+          <input type="text" name="city" placeholder="Ville" id="city" required><br>
+          <input type="email" name="email" placeholder="E-mail"   id="email"  required><br>
+          <button id="btnValide" type="submit"> Valider </button>
+          <a class="Retour" href="index.html" ><input type="button" id="btnRetour" value="Retour"></a> 
+        </form>
+      </div>
+      
+    
+
+    <footer>
+        <div>
+
+            <p>Copyright © 2020 Orinoco - Tous droits réservés</p>
+
+        </div>
+
+    </footer>
+    <script src="/js/panier.js"></script>
+</body>
+
+</html>

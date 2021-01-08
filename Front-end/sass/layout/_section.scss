@@ -1,0 +1,464 @@
+
+#container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.cader{ 
+    width: 30%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin:auto;
+    margin-bottom: 20px;
+    border:$color-secondary solid 13px;
+    text-align: center;
+    
+}
+
+
+h1 {
+    font-family: "roboto", "sans serif" ;
+    width: 500px;
+    margin: auto;
+    color: $color-secondary;
+    font-weight: bold;
+    font-size: 50px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.text-product{
+    background-color: $color-tertiary;
+    width: 100%;
+    height:auto;
+    margin: auto;
+}
+
+
+.h2ours{
+    color:$color-primary;
+    font-family: "roboto", "sans serif";
+    font-weight: bold;
+    font-size: 30px;
+    background-color: $color-tertiary;
+}
+
+
+.description{
+    font-family:"merrywether", "sans serif";
+    font-size: 20px;
+    background-color: $color-tertiary;
+}
+
+.price{
+    font-size: 24px;
+    background-color: $color-tertiary;
+
+}
+
+.btn{
+    width: 100%;
+    text-decoration: none;
+    background-color: $color-primary;
+}
+
+.lienA{ 
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+    background-color: $color-primary;
+    text-decoration: none;
+}
+
+
+
+
+/*Page Produit */ 
+
+#windowProduct{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: auto;
+    height: auto;
+    margin: 0px auto;
+    text-align: center;
+    
+}
+
+.divProduct{
+    width: 100%;
+    height: auto;
+    
+}
+
+.divImg{
+    width: 35%;
+    height: auto;
+    margin: auto;
+    border:$color-tertiary solid 10px;
+    text-align: center;
+}
+
+.imgProduct{
+    width: 100%;
+    height: auto;
+}
+
+.h2Product{
+    color:$color-secondary;
+    font-family: "roboto", "sans serif";
+    font-weight: bold;
+    font-size: 30px; 
+}
+
+.blocProduct{
+    width: 100%;
+    height:auto;   
+}
+
+.textProduct{
+    width: 30%;
+    height: auto;
+    margin: auto;
+    font-size: 20px;
+}   
+
+.option{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.select{
+    width: 100%;
+    height: auto;
+}
+
+.quantity{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.priceProduct{
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.btnAjout{
+    margin-top: 10px;
+    margin-right: 10px;
+    background-color: $color-tertiary;
+}
+
+.liens{
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+    background-color: $color-tertiary;
+}
+
+.btnReturn{
+    margin-top: 10px;
+    background-color: $color-secondary;
+}
+
+.lien{
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+    background-color: $color-secondary;
+}
+
+
+/*page panier*/ 
+
+#mainPanier{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    
+}
+
+#teddyCard{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.divTextPanier{
+    width: 40%;
+    height:auto;
+    margin: auto;
+    margin-bottom: 20px;
+    border: $color-secondary solid 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: center;
+    
+}
+
+.h2Panier{
+    font-family: "roboto", "sans serif";
+    font-weight: bold;
+    font-size: 30px; 
+    margin-left: 20px;
+    margin-right: 20px;
+    
+}
+
+.selectPanier{
+    font-family: "roboto", "sans serif";
+    font-size: 28px; 
+    margin-right: 10px;
+}
+
+.qtyPanier{
+    font-family: "roboto", "sans serif";
+    font-size: 28px; 
+    margin-right: 10px;
+}
+
+.prixTeddyPanier{
+    font-family: "roboto", "sans serif";
+    font-size: 28px; 
+}
+
+#totalPanier{
+    margin-left: 20px;
+    font-family: "roboto", "sans serif";
+    font-size: 28px; 
+    font-weight: bold;
+}
+
+#btnremove{
+    width:200px;
+    height:30px;
+    margin-left: 20px;
+    background-color: $color-secondary;
+
+}
+
+#identity{
+    margin-left: 20px;
+    margin-top: 20px;
+    font-family: "roboto", "sans serif";
+    font-size: 20px; 
+    font-weight: bold;
+}
+
+.divForm{
+    margin-left: 20px;
+}
+
+#form{
+    width:100%;
+    
+}
+
+input{
+    width: 400px;
+    height: 30px;
+    margin: auto;
+    font-family : inherit;
+    font-size   : 100%;
+}
+
+#btnValide{
+    width:200px;
+    height:30px;
+    margin-top: 20px;
+    background-color: $color-secondary;
+}
+
+#btnRetour{
+    width:200px;
+    height:30px;
+    background-color: $color-secondary;
+}
+
+.Retour{ 
+    background-color: $color-secondary;
+    color: black;
+   text-decoration: none;
+}
+
+
+/*page confirmation*/ 
+
+#main_command{
+    width: 100%;
+    height: auto;
+}
+
+#commandeNull{
+    margin-left: 20px;
+    font-family: "roboto", "sans serif";
+    font-size: 28px; 
+    font-weight: bold;
+}
+
+#h2_thanks{
+    margin-left: 20px;
+    font-family: "roboto", "sans serif";
+    font-size: 28px; 
+    font-weight: bold;
+}
+
+#info{
+    margin-left: 20px;
+    font-family: "roboto", "sans serif";
+    font-size: 20px; 
+    font-weight: bold;
+}
+
+#id_commande{
+    margin-left: 20px;
+    font-family: "roboto", "sans serif";
+    font-size: 28px; 
+    font-weight: bold;
+}
+
+#priceConfirmation{
+    margin-left: 20px;
+    font-family: "roboto", "sans serif";
+    font-size: 28px; 
+    font-weight: bold;
+}
+
+/* media querie page index*/ 
+
+@media (min-width: map-get($breakpoint, minitablet)) and (max-width: map-get($breakpoint, maxtablet)) {
+   
+
+    .cader{ 
+        width: 30%;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin:auto;
+        margin-bottom: 20px;
+        border:$color-secondary solid 13px;
+        text-align: center;
+        
+    }
+
+    /* media querie page produit*/
+
+    .divProduct{
+        width: 100%;
+        height: auto;
+        
+    }
+
+    .divImg{
+        width: 50%;
+        height: auto;
+        margin: auto;
+        border:$color-tertiary solid 10px;
+        text-align: center;
+    }
+
+}
+
+@media screen and (max-width: map-get($breakpoint, mobile)) {
+   
+
+    .cader{ 
+        width: 40%;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin:auto;
+        margin-bottom: 20px;
+        border:$color-secondary solid 13px;
+        text-align: center;
+        
+    }
+
+    h1 {
+        width:auto;
+        color: $color-secondary;
+        font-weight: bold;
+        font-size: 50px;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+    .divImg{
+        width: 60%;
+        height: auto;
+        margin: auto;
+        border:$color-tertiary solid 10px;
+        text-align: center;
+    }
+
+    .quantityInput{
+        width: auto;
+    }
+}
+
+/*media querie page panier*/ 
+
+@media (min-width: map-get($breakpoint, minitablet)) and (max-width: map-get($breakpoint, maxtablet)) {
+   
+
+.divTextPanier{
+    width: 40%;
+    height:auto;
+    margin: auto;
+    margin-top: 20px;
+    border: $color-secondary solid 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: center;
+    
+}
+
+#totalPanier{
+    margin-top: 20px;
+ }
+}
+
+@media screen and (max-width: map-get($breakpoint, mobile)) {
+   
+    .divTextPanier{
+        width: 60%;
+        height:auto;
+        margin: auto;
+        margin-top: 20px;
+        border: $color-secondary solid 10px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        text-align: center;
+        
+    }
+    
+    #totalPanier{
+        margin-top: 20px;
+     }
+
+     input{
+        width:auto;
+        height: 30px;
+        margin: auto;
+        
+    }
+   
+}

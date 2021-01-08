@@ -1,0 +1,26 @@
+.nav{
+    width: 80%;
+    height:50px;
+    margin: auto;
+    
+}
+
+ul{
+    display: flex;
+    flex-direction: row;   
+    float: right;
+}
+
+.lien{
+    width:auto;
+    margin-right: 10px;
+    list-style-type: none;
+}
+
+.nav-link{
+    text-decoration: none;
+    color:$color-secondary;
+    display: flex;
+    flex-direction: row;
+    font-size: 22px;
+}
