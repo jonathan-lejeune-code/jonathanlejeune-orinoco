@@ -19,7 +19,6 @@ if (teddyPanier.length === 0) {
   panierVide.innerHTML =`Votre panier est vide`
 }
 
-
 function recuperationPanier() {
   //création d'une boucle pour récupérer les éléments du panier
   for(let element of teddyPanier){
