@@ -6,22 +6,11 @@ const mainPanier = document.getElementById("mainPanier")
 //Création de la variable
 let totalProduitPanier = 0 ;
 
-//récupération des données stocker dans le localStorage
-let teddyPanier = Object.keys(localStorage) 
-//console.log(teddyPanier)
-
-//création d'une condition au cas ou le panier est vide
-if (teddyPanier.length === 0) {
-    
-  const panierVide = document.createElement("p");
-  mainPanier.appendChild(panierVide);
-  panierVide.className = "panierVide"
-  panierVide.innerHTML =`Votre panier est vide`
-}
-
+//déclaration de la fonction 
 function recuperationPanier() {
   //création d'une boucle pour récupérer les éléments du panier
-  for(let element of teddyPanier){
+  
+  for(let element in localStorage){
     console.log(element);
 
     let teddyStorage = JSON.parse(localStorage.getItem(element))
@@ -29,7 +18,7 @@ function recuperationPanier() {
     
     const divTextPanier = document.createElement("div");
     Panier.appendChild( divTextPanier);
-     divTextPanier.className = " divTextPanier"
+    divTextPanier.className = " divTextPanier"
     console.log( divTextPanier)
   
     const imgPanier = document.createElement("img");
@@ -68,11 +57,30 @@ function recuperationPanier() {
     totalProduitPanier = totalProduitPanier + (teddyStorage.price * teddyStorage.qty );
     console.log(totalProduitPanier)
   }
-  recuperationPanier(teddyPanier) 
 }
-
+recuperationPanier(localStorage) 
 
 //FIN DE LA FONCTION
+
+function recupId() {
+  let productsId = [];
+  for(let element in localStorage){
+    console.log(element)
+    let teddyStorage = JSON.parse(localStorage.getItem(element))
+    console.log(teddyStorage)
+    productsId.push(teddyStorage.id)
+  }
+}
+//création d'une condition au cas ou le panier est vide
+if (localStorage.length === 0) {
+    
+  const panierVide = document.createElement("p");
+  mainPanier.appendChild(panierVide);
+  panierVide.className = "panierVide"
+  panierVide.innerHTML =`Votre panier est vide`
+}else{
+  recupetionPanier()
+}
 
 //bouton supprimer les articles
 document.getElementById("removePanier").addEventListener("click", () => {
@@ -97,160 +105,8 @@ console.log(btnValide)
 //récupération de l'id produit
 let productsId = [];
 console.log(productsId)
-function recupId() {
-  for(let element of teddyPanier){
-    console.log(element)
-    let teddyStorage = JSON.parse(localStorage.getItem(element))
-    console.log(teddyStorage)
-    productsId.push(teddyStorage.id)
-  }
-}
-recupId(teddyPanier)
-console.log(teddyPanier)
 
+recupId()
+//console.log()
 
-/*partie formulaire */
-
-let reponseLastName = document.getElementById('reponseLastName');
-
-let mailReg = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}/
-let NameReg = /^[a-zA-z ]{2,}$/
-let addressReg = /^[0-9]{1,3}([a-zA-Z ]+)$/
-let cityReg = /^[a-zA-z ]{2,}$/
-
-let reponseAddress = document.getElementById('reponseAddress');
-let reponseCity = document.getElementById('reponseCity');
-let reponseMail = document.getElementById('reponseMail');
-
-function lastNameTest(value) {
-  return /^[a-zA-z ]{2,}$/.test(value)
-}
-
-lastName.addEventListener('change', function (e) {
-
-  if(!lastNameTest(lastName.value)){
-    reponseLastName.textContent = 'le champs nom comporte des erreurs'
-    e.preventDefault()
-    return false
-  } else {
-    console.log('true');
-  }
-})
-
-function firstNameTest(value) {
-  return /^[a-zA-z ]{2,}$/.test(value)
-}
-firstName.addEventListener('change', function (e) {
-
-  if(!firstNameTest(firstName.value)){
-  reponseFirstName.textContent = 'le champs prénom comporte des erreurs'
-  e.preventDefault()
-  return false
-  }else{
-  console.log('true')
-  }
-})
-
-function addressTest(value) {
-  return /^[0-9]{1,3}([a-zA-Z ]+)$/.test(value)
-}
-address.addEventListener('change', function (e) {
-
-  if(!addressTest(address.value)){
-  reponseAddress.textContent = 'le champs adresse comporte des erreurs'
-  e.preventDefault()
-  return false
-  }else{
-  console.log('true')
-  }
-})
-
-function cityTest(value) {
-  return /^[a-zA-z ]{2,}$/.test(value)
-}
-city.addEventListener('change', function (e) {
-
-  if(!cityTest(city.value)){
-  reponseCity.textContent = 'le champs city comporte des erreurs'
-  e.preventDefault()
-  return false
-  }else{
-  console.log('true')
-  }
-})
-
-function mailTest(value) {
-  return /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}/.test(value)
-}
-email.addEventListener('change', function (e) {
-
-  if(!mailTest(email.value)){
-  reponseMail.textContent = 'le champs email comporte des erreurs'
-  e.preventDefault()
-  return false
-  }else{
-  console.log('true')
-  }
-})
-
-
-let form = document.getElementById('form');
-form.addEventListener('submit',(e) =>{
-  
-  if (lastNameTest(lastName.value) && firstNameTest(firstName.value) && addressTest(address.value) && cityTest(city.value) && mailTest(email.value) ){
-     
-  }else {
-    e.preventDefault()
-    return false
-  }
-
-  let  contact =  {
-    firstName : firstName.value,
-    lastName : lastName.value,
-    address : address.value,
-    city : city.value,
-    email : email.value,
-  }
-  console.log(contact)
-
-  
-  e.preventDefault();
-  
-  products = productsId
-  let valide = {
-    contact,
-    products,
-  }
-  console.log(valide)
-  
-  //j'envoi les donnée avec post
-
-  fetch('http://localhost:3000/api/teddies/order',{
-    method: 'POST',
-    headers : {
-      'content-type': 'application/json'
-    },
-    body : JSON.stringify(valide)
-  })  
-  
-  
-  .then(response => response.json())   
-  .then(response => {
-    localStorage.clear();
-    
-    let envoiCommande = {  
-    	orderId : response.orderId ,
-      totalPrixPanier : totalProduitPanier,
-      nameConfirmation : firstName.value,    
-    }    
-    let commande = JSON.stringify(envoiCommande);
-    localStorage.setItem("commande", commande); 
-    window.location = "confirmation.html";
-  })
-
-
-}) 
-
-
-console.log(form)
 

@@ -9,7 +9,7 @@ let container = document.getElementById("container");
 
 /*requête fetch*/
 
-fetch("http://localhost:3000/api/teddies") 
+fetch(URL) 
 .then(function(response){                   /*je récupére les données de l'api */
   return response.json()
 })
