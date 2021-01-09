@@ -12,7 +12,7 @@ let reponseCity = document.getElementById('reponseCity');
 let reponseMail = document.getElementById('reponseMail');
 
 function lastNameTest(value) {
-  return NameReg.test(value)
+  return /^[a-zA-z ]{2,}$/.test(value)
 }
 
 lastName.addEventListener('change', function (e) {
@@ -27,7 +27,7 @@ lastName.addEventListener('change', function (e) {
 })
 
 function firstNameTest(value) {
-  return NameReg.test(value)
+  return /^[a-zA-z ]{2,}$/.test(value)
 }
 firstName.addEventListener('change', function (e) {
 
@@ -41,7 +41,7 @@ firstName.addEventListener('change', function (e) {
 })
 
 function addressTest(value) {
-  return addressReg.test(value)
+  return /^[0-9]{1,3}([a-zA-Z ]+)$/.test(value)
 }
 address.addEventListener('change', function (e) {
 
@@ -55,7 +55,7 @@ address.addEventListener('change', function (e) {
 })
 
 function cityTest(value) {
-  return cityReg.test(value)
+  return /^[a-zA-z ]{2,}$/.test(value)
 }
 city.addEventListener('change', function (e) {
 
@@ -69,7 +69,7 @@ city.addEventListener('change', function (e) {
 })
 
 function mailTest(value) {
-  return mailReg.test(value)
+  return /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}/.test(value)
 }
 email.addEventListener('change', function (e) {
 
