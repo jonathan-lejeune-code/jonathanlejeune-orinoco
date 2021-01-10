@@ -10,7 +10,7 @@ let totalProduitPanier = 0 ;
 function recuperationPanier() {
   //création d'une boucle pour récupérer les éléments du panier
   for(let element in localStorage){
-    console.log(element);
+    //console.log(element)
 
     
     let teddyStorage = JSON.parse(localStorage.getItem(element))
@@ -55,21 +55,20 @@ function recuperationPanier() {
 
     
     totalProduitPanier = totalProduitPanier + (teddyStorage.price * teddyStorage.qty );
-    console.log(totalProduitPanier)
+    //console.log(totalProduitPanier)
   }
 }
 recuperationPanier(localStorage)
   
 //création d'une condition au cas ou le panier est vide
-if (teddyPanier.length == 0) {
+if (localStorage.length == 0) {
     //
     let panierVide = document.createElement("p");
     mainPanier.appendChild(panierVide);
     panierVide.className = "panierVide"
     panierVide.innerHTML =`Votre panier est vide`
 }else{
-  
-  recuperationPanier() 
+   recuperationPanier() 
 }
 
 //bouton supprimer les articles
@@ -96,18 +95,18 @@ console.log(btnValide)
 let productsId = [];
 console.log(productsId)
 function recupId() {
-  for(let element of teddyPanier){
+  for(let element of localStorage){
     console.log(element)
     let teddyStorage = JSON.parse(localStorage.getItem(element))
     console.log(teddyStorage)
     productsId.push(teddyStorage.id)
   }
 }
-recupId(teddyPanier)
-console.log(teddyPanier)
+recupId(localStorage)
+//console.log(localStorage)
 
 
-/*partie formulaire */
+/*partie formulaire 
 
 let reponseLastName = document.getElementById('reponseLastName');
 
@@ -189,7 +188,7 @@ email.addEventListener('change', function (e) {
   }else{
   console.log('true')
   }
-})
+})*/
 
 
 let form = document.getElementById('form');

@@ -86,7 +86,7 @@ fetch ("http://localhost:3000/api/teddies/" + getId())
     const btnQuantity = document.createElement("input");
     oursQuantity.appendChild(btnQuantity);
     btnQuantity.setAttribute("type","number");
-    btnQuantity.setAttribute("value",0);
+    btnQuantity.setAttribute("value",1);
     btnQuantity.setAttribute("min",0);
     btnQuantity.className = "quantityInput";
 
