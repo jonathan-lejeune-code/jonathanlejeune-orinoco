@@ -3,17 +3,20 @@ let Panier = document.getElementById("teddyCard");
 let totalP = document.getElementById("totalPanier");
 let mainPanier = document.getElementById("mainPanier")
 
+let productsId = [];
+
 
 //Création de la variable
 let totalProduitPanier = 0 ;
 
 function recuperationPanier() {
   //création d'une boucle pour récupérer les éléments du panier
-  for(let element in localStorage){
-    //console.log(element)
+  for(let i = 0; i < localStorage.length;i++){
+  
+    let elementid = localStorage.key(i);
+    productsId.push(elementid)
 
-    
-    let teddyStorage = JSON.parse(localStorage.getItem(element))
+    let teddyStorage = JSON.parse(localStorage.getItem(elementid))
     console.log(teddyStorage)
     
     const divTextPanier = document.createElement("div");
@@ -58,7 +61,7 @@ function recuperationPanier() {
     //console.log(totalProduitPanier)
   }
 }
-recuperationPanier(localStorage)
+//recuperationPanier(localStorage)
   
 //création d'une condition au cas ou le panier est vide
 if (localStorage.length == 0) {
@@ -74,6 +77,7 @@ if (localStorage.length == 0) {
 //bouton supprimer les articles
 document.getElementById("removePanier").addEventListener("click", () => {
   localStorage.clear(); //efface
+  productsId =[];
   location.reload(); //recharge la page
 })
 
@@ -91,163 +95,160 @@ btnValide = `<button><a class='lien' href="confirmation.html"></a></button>`;
 console.log(btnValide)
 
 
-//récupération de l'id produit
-let productsId = [];
-console.log(productsId)
-function recupId() {
-  for(let element of localStorage){
-    console.log(element)
-    let teddyStorage = JSON.parse(localStorage.getItem(element))
-    console.log(teddyStorage)
-    productsId.push(teddyStorage.id)
-  }
-}
-recupId(localStorage)
+// function recupId() {
+//   for(let element of localStorage){
+//     console.log(element)
+//     let teddyStorage = JSON.parse(localStorage.getItem(element))
+//     console.log(teddyStorage)
+//     productsId.push(teddyStorage.id)
+//   }
+// }
+// recupId(localStorage)
 //console.log(localStorage)
 
 
-/*partie formulaire 
+// partie formulaire 
 
-let reponseLastName = document.getElementById('reponseLastName');
+// let reponseLastName = document.getElementById('reponseLastName');
 
-let mailReg = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}/
-let NameReg = /^[a-zA-z ]{2,}$/
-let addressReg = /^[0-9]{1,3}([a-zA-Z ]+)$/
-let cityReg = /^[a-zA-z ]{2,}$/
+// let mailReg = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}/
+// let NameReg = /^[a-zA-z ]{2,}$/
+// let addressReg = /^[0-9]{1,3}([a-zA-Z ]+)$/
+// let cityReg = /^[a-zA-z ]{2,}$/
 
-let reponseAddress = document.getElementById('reponseAddress');
-let reponseCity = document.getElementById('reponseCity');
-let reponseMail = document.getElementById('reponseMail');
+// let reponseAddress = document.getElementById('reponseAddress');
+// let reponseCity = document.getElementById('reponseCity');
+// let reponseMail = document.getElementById('reponseMail');
 
-function lastNameTest(value) {
-  return /^[a-zA-z ]{2,}$/.test(value)
-}
+// function lastNameTest(value) {
+//   return /^[a-zA-z ]{2,}$/.test(value)
+// }
 
-lastName.addEventListener('change', function (e) {
+// lastName.addEventListener('change', function (e) {
 
-  if(!lastNameTest(lastName.value)){
-    reponseLastName.textContent = 'le champs nom comporte des erreurs'
-    e.preventDefault()
-    return false
-  } else {
-    console.log('true');
-  }
-})
+//   if(!lastNameTest(lastName.value)){
+//     reponseLastName.textContent = 'le champs nom comporte des erreurs'
+//     e.preventDefault()
+//     return false
+//   } else {
+//     console.log('true');
+//   }
+// })
 
-function firstNameTest(value) {
-  return /^[a-zA-z ]{2,}$/.test(value)
-}
-firstName.addEventListener('change', function (e) {
+// function firstNameTest(value) {
+//   return /^[a-zA-z ]{2,}$/.test(value)
+// }
+// firstName.addEventListener('change', function (e) {
 
-  if(!firstNameTest(firstName.value)){
-  reponseFirstName.textContent = 'le champs prénom comporte des erreurs'
-  e.preventDefault()
-  return false
-  }else{
-  console.log('true')
-  }
-})
+//   if(!firstNameTest(firstName.value)){
+//   reponseFirstName.textContent = 'le champs prénom comporte des erreurs'
+//   e.preventDefault()
+//   return false
+//   }else{
+//   console.log('true')
+//   }
+// })
 
-function addressTest(value) {
-  return /^[0-9]{1,3}([a-zA-Z ]+)$/.test(value)
-}
-address.addEventListener('change', function (e) {
+// function addressTest(value) {
+//   return /^[0-9]{1,3}([a-zA-Z ]+)$/.test(value)
+// }
+// address.addEventListener('change', function (e) {
 
-  if(!addressTest(address.value)){
-  reponseAddress.textContent = 'le champs adresse comporte des erreurs'
-  e.preventDefault()
-  return false
-  }else{
-  console.log('true')
-  }
-})
+//   if(!addressTest(address.value)){
+//   reponseAddress.textContent = 'le champs adresse comporte des erreurs'
+//   e.preventDefault()
+//   return false
+//   }else{
+//   console.log('true')
+//   }
+// })
 
-function cityTest(value) {
-  return /^[a-zA-z ]{2,}$/.test(value)
-}
-city.addEventListener('change', function (e) {
+// function cityTest(value) {
+//   return /^[a-zA-z ]{2,}$/.test(value)
+// }
+// city.addEventListener('change', function (e) {
 
-  if(!cityTest(city.value)){
-  reponseCity.textContent = 'le champs city comporte des erreurs'
-  e.preventDefault()
-  return false
-  }else{
-  console.log('true')
-  }
-})
+//   if(!cityTest(city.value)){
+//   reponseCity.textContent = 'le champs city comporte des erreurs'
+//   e.preventDefault()
+//   return false
+//   }else{
+//   console.log('true')
+//   }
+// })
 
-function mailTest(value) {
-  return /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}/.test(value)
-}
-email.addEventListener('change', function (e) {
+// function mailTest(value) {
+//   return /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}/.test(value)
+// }
+// email.addEventListener('change', function (e) {
 
-  if(!mailTest(email.value)){
-  reponseMail.textContent = 'le champs email comporte des erreurs'
-  e.preventDefault()
-  return false
-  }else{
-  console.log('true')
-  }
-})*/
+//   if(!mailTest(email.value)){
+//   reponseMail.textContent = 'le champs email comporte des erreurs'
+//   e.preventDefault()
+//   return false
+//   }else{
+//   console.log('true')
+//   }
+// })
 
 
-let form = document.getElementById('form');
-form.addEventListener('submit',(e) =>{
+// let form = document.getElementById('form');
+// form.addEventListener('submit',(e) =>{
   
-  if (lastNameTest(lastName.value) && firstNameTest(firstName.value) && addressTest(address.value) && cityTest(city.value) && mailTest(email.value) ){
+//   if (lastNameTest(lastName.value) && firstNameTest(firstName.value) && addressTest(address.value) && cityTest(city.value) && mailTest(email.value) ){
      
-  }else {
-    e.preventDefault()
-    return false
-  }
+//   }else {
+//     e.preventDefault()
+//     return false
+//   }
 
-  let  contact =  {
-    firstName : firstName.value,
-    lastName : lastName.value,
-    address : address.value,
-    city : city.value,
-    email : email.value,
-  }
-  console.log(contact)
+//   let  contact =  {
+//     firstName : firstName.value,
+//     lastName : lastName.value,
+//     address : address.value,
+//     city : city.value,
+//     email : email.value,
+//   }
+//   console.log(contact)
 
   
-  e.preventDefault();
+//   e.preventDefault();
   
-  products = productsId
-  let valide = {
-    contact,
-    products,
-  }
-  console.log(valide)
+//   products = productsId
+//   let valide = {
+//     contact,
+//     products,
+//   }
+//   console.log(valide)
   
-  //j'envoi les donnée avec post
+//   //j'envoi les donnée avec post
 
-  fetch('http://localhost:3000/api/teddies/order',{
-    method: 'POST',
-    headers : {
-      'content-type': 'application/json'
-    },
-    body : JSON.stringify(valide)
-  })  
+//   fetch('http://localhost:3000/api/teddies/order',{
+//     method: 'POST',
+//     headers : {
+//       'content-type': 'application/json'
+//     },
+//     body : JSON.stringify(valide)
+//   })  
   
   
-  .then(response => response.json())   
-  .then(response => {
-    localStorage.clear();
+//   .then(response => response.json())   
+//   .then(response => {
+//     localStorage.clear();
     
-    let envoiCommande = {  
-    	orderId : response.orderId ,
-      totalPrixPanier : totalProduitPanier,
-      nameConfirmation : firstName.value,    
-    }    
-    let commande = JSON.stringify(envoiCommande);
-    localStorage.setItem("commande", commande); 
-    window.location = "confirmation.html";
-  })
+//     let envoiCommande = {  
+//     	orderId : response.orderId ,
+//       totalPrixPanier : totalProduitPanier,
+//       nameConfirmation : firstName.value,    
+//     }    
+//     let commande = JSON.stringify(envoiCommande);
+//     localStorage.setItem("commande", commande); 
+//     window.location = "confirmation.html";
+//   })
 
 
-}) 
+// }) 
 
 
-console.log(form)
+// console.log(form)
 

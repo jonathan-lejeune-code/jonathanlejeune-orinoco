@@ -1,97 +1,87 @@
-/*partie formulaire */
-
-let reponseLastName = document.getElementById('reponseLastName');
-
-let mailReg = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}/
-let NameReg = /^[a-zA-z ]{2,}$/
-let addressReg = /^[0-9]{1,3}([a-zA-Z ]+)$/
-let cityReg = /^[a-zA-z ]{2,}$/
-
-let reponseAddress = document.getElementById('reponseAddress');
-let reponseCity = document.getElementById('reponseCity');
-let reponseMail = document.getElementById('reponseMail');
-
-function lastNameTest(value) {
-  return NameReg.test(value)
-}
-
-lastName.addEventListener('change', function (e) {
-
-  if(!lastNameTest(lastName.value)){
-    reponseLastName.textContent = 'le champs nom comporte des erreurs'
-    e.preventDefault()
-    return false
-  } else {
-    console.log('true');
-  }
-})
-
-function firstNameTest(value) {
-  return NameReg.test(value)
-}
-firstName.addEventListener('change', function (e) {
-
-  if(!firstNameTest(firstName.value)){
-  reponseFirstName.textContent = 'le champs prénom comporte des erreurs'
-  e.preventDefault()
-  return false
-  }else{
-  console.log('true')
-  }
-})
-
-function addressTest(value) {
-  return addressReg.test(value)
-}
-address.addEventListener('change', function (e) {
-
-  if(!addressTest(address.value)){
-  reponseAddress.textContent = 'le champs adresse comporte des erreurs'
-  e.preventDefault()
-  return false
-  }else{
-  console.log('true')
-  }
-})
-
-function cityTest(value) {
-  return cityReg.test(value)
-}
-city.addEventListener('change', function (e) {
-
-  if(!cityTest(city.value)){
-  reponseCity.textContent = 'le champs city comporte des erreurs'
-  e.preventDefault()
-  return false
-  }else{
-  console.log('true')
-  }
-})
-
-function mailTest(value) {
-  return mailReg.test(value)
-}
-email.addEventListener('change', function (e) {
-
-  if(!mailTest(email.value)){
-  reponseMail.textContent = 'le champs email comporte des erreurs'
-  e.preventDefault()
-  return false
-  }else{
-  console.log('true')
-  }
-})
-
-
+// clés = element.placeholder
 let form = document.getElementById('form');
-form.addEventListener('submit',(e) =>{
-  
-  if (lastNameTest(lastName.value) && firstNameTest(firstName.value) && addressTest(address.value) && cityTest(city.value) && mailTest(email.value) ){
-     
-  }else {
-    e.preventDefault()
-    return false
+let formValide = [0, 0, 0, 0, 0];
+let regPaterns = {
+  "Nom":      /^[a-zA-z ]{2,}$/,
+  "Prénom":   /^[a-zA-z ]{2,}$/,
+  "Adresse":  /^[0-9]{1,3}([a-zA-Z ]+)$/,
+  "Ville":    /^[a-zA-z ]{2,}$/,
+  "E-mail":   /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}/
+};
+
+function inputTest(value, patern)
+{
+
+  return patern.test(value);
+}
+
+//  recuperer les enfant du formulaire selon leur position dans la liste
+// mettre a jour le tableau de validité
+let childOfForm = form.getElementsByTagName("input");
+
+let valueOfChild = Object.values(childOfForm);
+
+console.log(childOfForm)
+console.log(valueOfChild)
+function changeCallBack(e){
+
+  let elementPlaceholder = e.target.placeholder;
+  let currentId = valueOfChild.indexOf(e.target);
+  let messageElement = document.getElementById("response-"+ e.target.id);
+    
+
+  if(!inputTest(e.target.value, regPaterns[elementPlaceholder]))
+  {
+    // small
+    messageElement.textContent = "le champs "+elementPlaceholder.toLowerCase()+" n'est pas valide !";
+    messageElement.classList.add("visible");
+    messageElement.classList.remove("hidden");
+
+    formValide[currentId] = 0;
+    
   }
+
+  else 
+  {
+    formValide[currentId] = 1;
+    messageElement.classList.remove("visible");
+    messageElement.classList.add("hidden");
+    
+  }
+
+  if(formValide < 0)
+  {
+    formValide = 0;
+    
+  }
+  else if(formValide > 5)
+  {
+    formValide = 5;
+    
+  }
+
+  console.log(formValide);
+}
+
+
+lastName.addEventListener('change', changeCallBack);
+
+
+firstName.addEventListener('change', changeCallBack);
+
+
+address.addEventListener('change',changeCallBack);
+
+
+city.addEventListener('change', changeCallBack);
+
+
+email.addEventListener('change', changeCallBack);
+
+
+form.addEventListener('submit',(e) =>{
+
+  e.preventDefault()
 
   let  contact =  {
     firstName : firstName.value,
@@ -100,42 +90,49 @@ form.addEventListener('submit',(e) =>{
     city : city.value,
     email : email.value,
   }
-  console.log(contact)
 
-  
-  e.preventDefault();
-  
-  products = productsId
-  let valide = {
-    contact,
-    products,
-  }
-  console.log(valide)
-  
-  //j'envoi les donnée avec post
-
-  fetch('http://localhost:3000/api/teddies/order',{
-    method: 'POST',
-    headers : {
-      'content-type': 'application/json'
-    },
-    body : JSON.stringify(valide)
-  })  
-  
-  
-  .then(response => response.json())   
-  .then(response => {
-    localStorage.clear();
+  if (formValide.indexOf(0) == -1){
+    console.log("soumis")
+    // console.log(contact)    
+    products = productsId;
+    let valide = {
+      contact,
+      products,
+    }
+    // console.log(valide)
     
-    let envoiCommande = {  
-    	orderId : response.orderId ,
-      totalPrixPanier : totalProduitPanier,
-      nameConfirmation : firstName.value,    
-    }    
-    let commande = JSON.stringify(envoiCommande);
-    localStorage.setItem("commande", commande); 
-    window.location = "confirmation.html";
-  })
+    //j'envoi les donnée avec post
+
+    fetch('http://localhost:3000/api/teddies/order',{
+      method: 'POST',
+      headers : {
+        'content-type': 'application/json'
+      },
+      body : JSON.stringify(valide)
+    })  
+    
+    
+    .then(response => response.json())   
+    .then(response => {
+      localStorage.clear();
+      
+      let envoiCommande = {  
+        orderId : response.orderId ,
+        totalPrixPanier : totalProduitPanier,
+        nameConfirmation : firstName.value,    
+      }    
+      let commande = JSON.stringify(envoiCommande);
+      localStorage.setItem("commande", commande); 
+      window.location = "confirmation.html"
+    })
+  }
+
+  else
+  {
+    return false
+  }
+
+
 
 
 }) 

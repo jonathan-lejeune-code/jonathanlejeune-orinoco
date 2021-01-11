@@ -59,10 +59,15 @@
     <div class="divForm">
         <form  id="form">
           <input type="text" name="lastName" placeholder="Nom" id="lastName"  required><br>
+          <small class="hidden" id="response-lastName"></small><br>
           <input type="text" name="firstName" placeholder="Prénom" id="firstName"  required><br>
+          <small class="hidden" id="response-firstName"></small><br>
           <input type="text" name="address" placeholder="Adresse" id="address"  required><br>
-          <input type="text" name="city" placeholder="Ville" id="city" required><br>
+          <small class="hidden" id="response-address"></small><br>
+          <input  type="text" name="city" placeholder="Ville" id="city" required><br>
+          <small class="hidden" id="response-city"></small><br>
           <input type="email" name="email" placeholder="E-mail"   id="email"  required><br>
+          <small class="hidden" id="response-email"></small><br>
           <button id="btnValide" type="submit"> Valider </button>
           <a class="Retour" href="index.html" ><input type="button" id="btnRetour" value="Retour"></a> 
         </form>
@@ -78,7 +83,7 @@
         </div>
 
     </footer>
-    <script src="/js/panier.js"></script>
+    <script src="./js/panier.js"></script>
     <script src="./js/formulaire.js"></script>
 </body>
 
