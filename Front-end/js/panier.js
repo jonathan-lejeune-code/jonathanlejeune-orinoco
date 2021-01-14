@@ -1,16 +1,18 @@
 //Je récupére les élèments 
-let Panier = document.getElementById("teddyCard");
-let totalP = document.getElementById("totalPanier");
-let mainPanier = document.getElementById("mainPanier")
+const Panier = document.getElementById("teddyCard");
+const totalP = document.getElementById("totalPanier");
+const mainPanier = document.getElementById("mainPanier")
 
-let productsId = [];
+const productsId = [];
 
 
 //Création de la variable
 let totalProduitPanier = 0 ;
 
 function recuperationPanier() {
+
   //création d'une boucle pour récupérer les éléments du panier
+  
   for(let i = 0; i < localStorage.length;i++){
   
     let elementid = localStorage.key(i);
