@@ -94,7 +94,7 @@ form.addEventListener('submit', (e) => {
     // console.log(valide)
 
     //j'envoi les donnée avec post
-
+    http
     fetch('https://lj-orinoco.herokuapp.com/api/teddies/order', {
         method: 'POST',
         headers: {
