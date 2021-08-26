@@ -95,7 +95,7 @@ form.addEventListener('submit', (e) => {
 
     //j'envoi les donnée avec post
 
-    fetch('http://localhost:3000/https://lj-orinoco.herokuapp.com/api/teddies/order', {
+    fetch('https://lj-orinoco.herokuapp.com/api/teddies/order', {
         method: 'POST',
         headers: {
           'content-type': 'application/json'
