@@ -7,9 +7,13 @@ const oursContainer = document.getElementById("windowProduct")
 //récupération de l'id du produit
 function getId(){
 	const param = window.location.search
-	const id = param.replace("?id=","") 
-	if (!id) throw new Error ("il manque l\'id")
-	return id
+  const id = param.replace("?id=","") 
+  
+  if (!id) 
+  
+  throw new Error ("il manque l\'id")
+  
+  return id
 }
 
 
