@@ -1,0 +1,34 @@
+/*version desktop*/
+.img1{
+    @include imagesdesktop;
+}
+
+.imgPanier{
+    @include imagesPanierDesktop;
+}
+
+/*image version mobile*/ 
+
+@media screen and (max-width: map-get($breakpoint, mobile)) {
+    .img1{
+        @include imagesmobile;
+    }
+
+    .imgPanier{
+        @include imagesPanierMobile;
+    }
+    
+}
+
+/*image version tablet*/ 
+
+@media (min-width: map-get($breakpoint, minitablet)) and (max-width: map-get($breakpoint, maxtablet)) {
+    .img1{
+        @include imagestablet;
+    }
+
+    .imgPanier{
+        @include imagesPanierTablet;
+    }
+    
+}
